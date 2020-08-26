@@ -59,7 +59,7 @@ defmodule Jamdb.Oracle do
   defp stmt({:fetch, cursor, row_format, last_row}, _), do: {:fetch, cursor, row_format, last_row}
   defp stmt({:batch, sql, params}, _), do: {:batch, sql, params}
   defp stmt(sql, params), do: {sql, params}
-  
+
   @impl true
   def connect(opts) do
     database = Keyword.fetch!(opts, :database) |> to_charlist
